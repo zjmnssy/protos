@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "protos/private/common/error_code.proto";
+
+package gate_user;
+
+message Request {
+    string key = 1;
+    common.ErrorCode code = 2;
+}
+
+message Response {
+    string value = 1;
+    common.ErrorCode code = 2;
+}
+
+service LoginService {
+    rpc Hello(Request) returns (Response);
+}
+
+

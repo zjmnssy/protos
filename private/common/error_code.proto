@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package common;
+
+enum ErrorCode {
+    SUCCESS = 0;
+    STARTED = 1;
+    RUNNING = 2;
+}
