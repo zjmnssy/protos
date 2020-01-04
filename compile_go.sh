@@ -4,41 +4,32 @@ scriptFilePath=$(cd `dirname $0`; pwd)
 echo "[INFO] current work path : $scriptFilePath"
 
 PROJECT_FATHER_PATH=${scriptFilePath%/*}
+PROJECT_PATH=$scriptFilePath
+PACKAGE_NAME="github.com/zjmnssy/protos"
 
-function goModInit()
-{
+function goModInit(){
     isInited=`find -name *.mod`
     if [ -z $isInited ] 
     then 
         echo "[INFO] project need init"
-        go mod init protos
+        go mod init $PACKAGE_NAME
+        echo "" >> go.mod
+        echo "replace $PACKAGE_NAME => $scriptFilePath" >> go.mod
     else
         echo "[INFO] project not need init"
     fi
 }
 
-function compileWithImport()
-{
-    protoFile=$1"/"$2
-    protoc -I=$PROJECT_FATHER_PATH -I=$1 --go_out=$PROJECT_FATHER_PATH $protoFile
-}
-
-function compileWithoutImport()
-{
-    protoFile=$1"/"$2
-    protoc -I=$1 --go_out=$1 $protoFile
-}
-
 function compileProto()
 {
     protoFile=$1"/"$2
-    echo  "[INFO] compile $protoFile."
-    if grep -q "import" $protoFile
-    then
-        compileWithImport $1 $2
-    else
-        compileWithoutImport $1 $2
-    fi
+    bash $protoFile $PROJECT_PATH $PACKAGE_NAME
+    #if grep -q "import" $protoFile
+    #then
+        #bash protoFile $PROJECT_PATH $PACKAGE_NAME
+    #else
+        #bash protoFile $PROJECT_PATH $PACKAGE_NAME
+    #fi
 }
 
 function compileMain()
@@ -48,16 +39,19 @@ function compileMain()
         if [ -d $1"/"$file ] ; then
             compileMain $1"/"$file
         else
-            if [[ "$file" =~  "proto"  ]] ; then
+            if [[ "$file" =~  "go_compile"  ]] ; then
                 compileProto $1 $file
-            else 
-                echo  "[WARN] $file not proto file, ignore."
             fi
         fi
     done
 }
 
+echo "**********************************************************************************************"
+echo "                                    1. go module init"
 goModInit
-compileMain $scriptFilePath
+echo "       -------------------------------------------------------------------------------        "
+echo "                                    2. compile proto files"
+compileMain $PROJECT_PATH
+echo "**********************************************************************************************"
 
 

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Login;
+
+import "client.proto";
+
+service AppLogin {
+    rpc Login(LoginRequest) returns(LoginResponse) {}
+}
+
+
