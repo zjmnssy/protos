@@ -3,32 +3,34 @@ syntax = "proto3";
 package common;
 
 // 错误码, 说明:
-// 1. 错误码命名规则为: 服务类型_错误说明
+// 1. 错误码命名规则为: 服务类型+错误说明
 enum ErrorCode {
     // 常规 0 - 199 
-    COMMON_SUCCESS = 0;
-    
-    // web 200 - 599 
-    WEB_SUCCESS = 200;
-    WEB_METHOD_ERROR = 201;
-    WEB_ROUTE_NOT_FOUND = 202;
+    Success = 0;
 
-    // 通信 600 - 699
-    NETWORK_COMMON_ERROR = 600;
-    NETWORK_DEADLINE = 601;
-    NETWORK_CONNECTION_REFUSED = 602;
-    NETWORK_DEST_UNREACHABLE = 603;
+    // web 200 - 699 
+    WebSuccess = 200;
+    WebMethodError = 600;
+    WebRouteNotFound = 601;
+    WebCookieOntFound = 602;
+    WebCookieIllegal = 603;
 
-    // sql 700 - 799 
-    SQL_COMMON_ERROR = 700;
-    SQL_CERTIFICATION_FAILED = 701;
-    SQL_PERMISSION_DENY = 702;
-    SQL_QUERY_ERROR = 703;
-    SQL_SCAN_ERROR = 704;
-    SQL_EXEC_ERROR = 705;
-    SQL_TX_BEGIN_ERROR = 706;
-    SQL_TX_ROLLBACK_ERROR = 707;
-    SQL_TX_COMMIT_ERROR = 708;
+    // 通信 700 - 799 
+    NetworkCommonError = 700;
+    NetworkDeadline = 701;
+    NetworkConnectionRefused = 702;
+    NetworkDestUnreachable = 703;
 
-    // etcd 600 - 699 
+    // sql 800 - 899 
+    SqlCommonError = 800;
+    SqlCertificationFailed = 801;
+    SqlPermissionDeny = 802;
+    SqlQueryError = 803;
+    SqlScanError = 804;
+    SqlExecError = 805;
+    SqlTxBeginError = 806;
+    SqlTxRoobackError = 807;
+    SqlTxCommitError = 808;
+
+    // etcd 900 - 999 
 }
