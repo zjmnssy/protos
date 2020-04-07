@@ -8,6 +8,9 @@ enum ErrorCode {
     // 常规 0 - 199 
     Success = 0;
 
+    JSONMarshalError = 100;
+    JSONUnmarshalError = 101;
+
     // web 200 - 699 
     WebSuccess = 200;
     WebMethodError = 600;
