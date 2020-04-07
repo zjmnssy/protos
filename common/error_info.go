@@ -3,10 +3,10 @@ package common
 import fmt "fmt"
 
 // ErrorMsg 错误提示信息表
-var ErrorMsg = make(map[ErrorCode]string)
+var ErrorMsg map[ErrorCode]string
 
-// InitErrorMsg 初始化错误信息表
-func InitErrorMsg() {
+func init() {
+	ErrorMsg = make(map[ErrorCode]string)
 	for k := range ErrorCode_name {
 		ErrorMsg[ErrorCode(k)] = fmt.Sprintf("内部错误(%d)", k)
 	}
