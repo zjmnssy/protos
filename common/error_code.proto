@@ -8,8 +8,14 @@ enum ErrorCode {
     // 常规 0 - 199 
     Success = 0;
 
-    JSONMarshalError = 100;
-    JSONUnmarshalError = 101;
+    SystemError = 100;
+    SystemBusy = 101;
+    JSONMarshalError = 102;
+    JSONUnmarshalError = 103;
+    CredentialMissing = 104;
+    CredentialParseError = 105;
+    GetInfoFromCredentialError = 106;
+    CredentialExpired = 107;
 
     // web 200 - 699 
     WebSuccess = 200;
