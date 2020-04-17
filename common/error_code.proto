@@ -27,6 +27,9 @@ enum ErrorCode {
     CredentialParseError = 1105;
     GetInfoFromCredentialError = 1106;
     CredentialExpired = 1107;
+    UsernameOrPasswordError = 1108;
+    RecommendCodeError = 1109;
+    VerificationCodeError = 1110;
 
     // 通信 1200 - 1299
     NetworkCommonError = 1200;

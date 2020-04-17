@@ -18,6 +18,9 @@ func init() {
 	ErrorMsg[ErrorCode_CredentialParseError] = "拒绝访问"
 	ErrorMsg[ErrorCode_GetInfoFromCredentialError] = "拒绝访问"
 	ErrorMsg[ErrorCode_CredentialExpired] = "已过期，请重新登录"
+	ErrorMsg[ErrorCode_UsernameOrPasswordError] = "用户名或密码错误"
+	ErrorMsg[ErrorCode_RecommendCodeError] = "推荐码错误"
+	ErrorMsg[ErrorCode_VerificationCodeError] = "验证码错误"
 
 	ErrorMsg[ErrorCode_WebSuccess] = "success"
 	ErrorMsg[ErrorCode_WebMethodError] = "method error"
