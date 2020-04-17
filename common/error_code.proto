@@ -5,41 +5,45 @@ package common;
 // 错误码, 说明:
 // 1. 错误码命名规则为: 服务类型+错误说明
 enum ErrorCode {
-    // 常规 0 - 199 
+    // 常规 0
     Success = 0;
 
-    SystemError = 100;
-    SystemBusy = 101;
-    JSONMarshalError = 102;
-    JSONUnmarshalError = 103;
-    CredentialMissing = 104;
-    CredentialParseError = 105;
-    GetInfoFromCredentialError = 106;
-    CredentialExpired = 107;
-
-    // web 200 - 699 
+    // web 200 - 999 
     WebSuccess = 200;
-    WebMethodError = 600;
-    WebRouteNotFound = 601;
-    WebCookieOntFound = 602;
-    WebCookieIllegal = 603;
 
-    // 通信 700 - 799 
-    NetworkCommonError = 700;
-    NetworkDeadline = 701;
-    NetworkConnectionRefused = 702;
-    NetworkDestUnreachable = 703;
+    // web 1000 - 1099
+    WebError = 1000;
+    WebMethodError = 1001;
+    WebRouteNotFound = 1002;
+    WebCookieOntFound = 1003;
+    WebCookieIllegal = 1004;
 
-    // sql 800 - 899 
-    SqlCommonError = 800;
-    SqlCertificationFailed = 801;
-    SqlPermissionDeny = 802;
-    SqlQueryError = 803;
-    SqlScanError = 804;
-    SqlExecError = 805;
-    SqlTxBeginError = 806;
-    SqlTxRoobackError = 807;
-    SqlTxCommitError = 808;
+    // web 1100 - 1199
+    SystemError = 1100;
+    SystemBusy = 1101;
+    JSONMarshalError = 1102;
+    JSONUnmarshalError = 1103;
+    CredentialMissing = 1104;
+    CredentialParseError = 1105;
+    GetInfoFromCredentialError = 1106;
+    CredentialExpired = 1107;
 
-    // etcd 900 - 999 
+    // 通信 1200 - 1299
+    NetworkCommonError = 1200;
+    NetworkDeadline = 1201;
+    NetworkConnectionRefused = 1202;
+    NetworkDestUnreachable = 1203;
+
+    // sql 1300 - 1399
+    SqlCommonError = 1300;
+    SqlCertificationFailed = 1301;
+    SqlPermissionDeny = 1302;
+    SqlQueryError = 1303;
+    SqlScanError = 1304;
+    SqlExecError = 1305;
+    SqlTxBeginError = 1306;
+    SqlTxRoobackError = 1307;
+    SqlTxCommitError = 1308;
+
+    // etcd 1400 - 1499
 }

@@ -14,10 +14,10 @@ func init() {
 	ErrorMsg[ErrorCode_Success] = "success"
 
 	ErrorMsg[ErrorCode_SystemBusy] = "系统繁忙"
-	ErrorMsg[ErrorCode_CredentialMissing] = "拒绝访问"
+	ErrorMsg[ErrorCode_CredentialMissing] = "请先登录"
 	ErrorMsg[ErrorCode_CredentialParseError] = "拒绝访问"
 	ErrorMsg[ErrorCode_GetInfoFromCredentialError] = "拒绝访问"
-	ErrorMsg[ErrorCode_CredentialExpired] = "拒绝访问"
+	ErrorMsg[ErrorCode_CredentialExpired] = "已过期，请重新登录"
 
 	ErrorMsg[ErrorCode_WebSuccess] = "success"
 	ErrorMsg[ErrorCode_WebMethodError] = "method error"
