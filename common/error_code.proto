@@ -30,6 +30,9 @@ enum ErrorCode {
     UsernameOrPasswordError = 1108;
     RecommendCodeError = 1109;
     VerificationCodeError = 1110;
+    UsernameHasExists = 1111;
+    PhoneHasExists = 1112;
+    EmailHasExists = 1113;
 
     // 通信 1200 - 1299
     NetworkCommonError = 1200;

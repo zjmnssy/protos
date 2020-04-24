@@ -21,6 +21,9 @@ func init() {
 	ErrorMsg[ErrorCode_UsernameOrPasswordError] = "用户名或密码错误"
 	ErrorMsg[ErrorCode_RecommendCodeError] = "推荐码错误"
 	ErrorMsg[ErrorCode_VerificationCodeError] = "验证码错误"
+	ErrorMsg[ErrorCode_UsernameHasExists] = "用户名已存在"
+	ErrorMsg[ErrorCode_PhoneHasExists] = "手机号码已注册过"
+	ErrorMsg[ErrorCode_EmailHasExists] = "邮箱已注册过"
 
 	ErrorMsg[ErrorCode_WebSuccess] = "success"
 	ErrorMsg[ErrorCode_WebMethodError] = "method error"
