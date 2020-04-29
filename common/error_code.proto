@@ -17,6 +17,8 @@ enum ErrorCode {
     WebRouteNotFound = 1002;
     WebCookieOntFound = 1003;
     WebCookieIllegal = 1004;
+    WebMissingOfCSRF = 1005;
+    WebIllegalAccessOfCSRF = 1006;
 
     // web 1100 - 1199
     SystemError = 1100;

@@ -13,6 +13,14 @@ func init() {
 
 	ErrorMsg[ErrorCode_Success] = "success"
 
+	ErrorMsg[ErrorCode_WebSuccess] = "success"
+	ErrorMsg[ErrorCode_WebMethodError] = "method error"
+	ErrorMsg[ErrorCode_WebRouteNotFound] = "route not found"
+	ErrorMsg[ErrorCode_WebCookieOntFound] = "cookie missing"
+	ErrorMsg[ErrorCode_WebCookieIllegal] = "cookie illegal"
+	ErrorMsg[ErrorCode_WebMissingOfCSRF] = "非法访问"
+	ErrorMsg[ErrorCode_WebIllegalAccessOfCSRF] = "非法访问"
+
 	ErrorMsg[ErrorCode_SystemBusy] = "系统繁忙"
 	ErrorMsg[ErrorCode_CredentialMissing] = "请先登录"
 	ErrorMsg[ErrorCode_CredentialParseError] = "拒绝访问"
@@ -24,12 +32,6 @@ func init() {
 	ErrorMsg[ErrorCode_UsernameHasExists] = "用户名已存在"
 	ErrorMsg[ErrorCode_PhoneHasExists] = "手机号码已注册过"
 	ErrorMsg[ErrorCode_EmailHasExists] = "邮箱已注册过"
-
-	ErrorMsg[ErrorCode_WebSuccess] = "success"
-	ErrorMsg[ErrorCode_WebMethodError] = "method error"
-	ErrorMsg[ErrorCode_WebRouteNotFound] = "route not found"
-	ErrorMsg[ErrorCode_WebCookieOntFound] = "cookie missing"
-	ErrorMsg[ErrorCode_WebCookieIllegal] = "cookie illegal"
 
 	ErrorMsg[ErrorCode_NetworkCommonError] = "network error"
 	ErrorMsg[ErrorCode_NetworkDeadline] = "network deadline"
