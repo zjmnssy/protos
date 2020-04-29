@@ -35,6 +35,9 @@ enum ErrorCode {
     UsernameHasExists = 1111;
     PhoneHasExists = 1112;
     EmailHasExists = 1113;
+    UsernameFormatError = 1114;
+    EmailFormatError = 1115;
+    PhoneFormatError = 1116;
 
     // 通信 1200 - 1299
     NetworkCommonError = 1200;

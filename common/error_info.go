@@ -32,6 +32,9 @@ func init() {
 	ErrorMsg[ErrorCode_UsernameHasExists] = "用户名已存在"
 	ErrorMsg[ErrorCode_PhoneHasExists] = "手机号码已注册过"
 	ErrorMsg[ErrorCode_EmailHasExists] = "邮箱已注册过"
+	ErrorMsg[ErrorCode_UsernameFormatError] = "用户名格式不符合要求"
+	ErrorMsg[ErrorCode_EmailFormatError] = "邮箱格式不符合要求"
+	ErrorMsg[ErrorCode_PhoneFormatError] = "手机号格式不符合要求"
 
 	ErrorMsg[ErrorCode_NetworkCommonError] = "network error"
 	ErrorMsg[ErrorCode_NetworkDeadline] = "network deadline"
