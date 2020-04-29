@@ -20,7 +20,7 @@ enum ErrorCode {
     WebMissingOfCSRF = 1005;
     WebIllegalAccessOfCSRF = 1006;
 
-    // web 1100 - 1199
+    // system 1100 - 1199
     SystemError = 1100;
     SystemBusy = 1101;
     JSONMarshalError = 1102;
@@ -38,6 +38,7 @@ enum ErrorCode {
     UsernameFormatError = 1114;
     EmailFormatError = 1115;
     PhoneFormatError = 1116;
+    ParameterError = 1117;
 
     // 通信 1200 - 1299
     NetworkCommonError = 1200;
