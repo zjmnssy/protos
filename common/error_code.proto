@@ -39,6 +39,7 @@ enum ErrorCode {
     EmailFormatError = 1115;
     PhoneFormatError = 1116;
     ParameterError = 1117;
+    ConfigurationExists = 1118;
 
     // 通信 1200 - 1299
     NetworkCommonError = 1200;

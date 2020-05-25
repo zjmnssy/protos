@@ -36,6 +36,7 @@ func init() {
 	ErrorMsg[ErrorCode_EmailFormatError] = "邮箱格式不符合要求"
 	ErrorMsg[ErrorCode_PhoneFormatError] = "手机号格式不符合要求"
 	ErrorMsg[ErrorCode_ParameterError] = "请求错误"
+	ErrorMsg[ErrorCode_ConfigurationExists] = "配置已存在或冲突"
 
 	ErrorMsg[ErrorCode_NetworkCommonError] = "network error"
 	ErrorMsg[ErrorCode_NetworkDeadline] = "network deadline"
