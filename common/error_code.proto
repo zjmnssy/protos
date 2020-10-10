@@ -1,6 +1,7 @@
 syntax = "proto3";
-
+option go_package = "common";
 package common;
+
 
 // 错误码, 说明:
 // 1. 错误码命名规则为: 服务类型+错误说明

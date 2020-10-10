@@ -53,6 +53,7 @@ function cleanCpp()
 
 function cleanMain() 
 {
+    echo "$1 11111111111"
     if [[ "$1" =~  "cpp"  ]] ; then
         echo "                                     clean compile proto cpp files"
         cleanCpp $scriptFilePath

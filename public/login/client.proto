@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Login;
+package login;
 
 import "common/error_code.proto";
 
