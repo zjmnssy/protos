@@ -8,8 +8,8 @@ echo "[INFO] begin compile package : $scriptFilePath"
 
 cd $scriptFilePath
 
-protoc -I=$1 -I=. --go_out=plugins=grpc,Mcommon/error_code.proto=$2/common:. client.proto
+protoc -I=$1 -I=. --go_out=plugins=grpc,,paths=source_relative:. client.proto
 
-protoc -I=$1 -I=. --go_out=plugins=grpc:. login_service.proto
+protoc -I=$1 -I=. --go_out=plugins=grpc,paths=source_relative:. login_service.proto
 
 

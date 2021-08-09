@@ -1,7 +1,8 @@
 syntax = "proto3";
-option go_package = "common";
+
 package common;
 
+option go_package = "github.com/zjmnssy/protos/common;common";
 
 // 错误码, 说明:
 // 1. 错误码命名规则为: 服务类型+错误说明
@@ -56,7 +57,7 @@ enum ErrorCode {
     SqlScanError = 1304;
     SqlExecError = 1305;
     SqlTxBeginError = 1306;
-    SqlTxRoobackError = 1307;
+    SqlTxRollbackError = 1307;
     SqlTxCommitError = 1308;
 
     // etcd 1400 - 1499

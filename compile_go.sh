@@ -20,18 +20,6 @@ function goModInit(){
     fi
 }
 
-function compileProto()
-{
-    protoFile=$1"/"$2
-    bash $protoFile $PROJECT_PATH $PACKAGE_NAME
-    #if grep -q "import" $protoFile
-    #then
-        #bash protoFile $PROJECT_PATH $PACKAGE_NAME
-    #else
-        #bash protoFile $PROJECT_PATH $PACKAGE_NAME
-    #fi
-}
-
 function compileMain()
 {
     for file in `ls $1`
@@ -39,8 +27,13 @@ function compileMain()
         if [ -d $1"/"$file ] ; then
             compileMain $1"/"$file
         else
-            if [[ "$file" =~  "go_compile"  ]] ; then
-                compileProto $1 $file
+            if [[ "$file" =~  ".proto"  ]] ; then
+                fileFull=$1"/"$file
+                replacement="."
+                stripPrefix=${fileFull/#$scriptFilePath/$replacement}
+                echo "now compile $stripPrefix"
+
+                protoc  --go_out=plugins=grpc,paths=source_relative:. $stripPrefix
             fi
         fi
     done

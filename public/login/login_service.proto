@@ -2,7 +2,9 @@ syntax = "proto3";
 
 package login;
 
-import "client.proto";
+option go_package = "github.com/zjmnssy/protos/public/login;login";
+
+import "public/login/client.proto";
 
 service AppLogin {
     rpc Login(LoginRequest) returns(LoginResponse) {}

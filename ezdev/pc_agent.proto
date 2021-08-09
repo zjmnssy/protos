@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ezdev;
+
+option go_package = "github.com/zjmnssy/protos/ezdev";
+
+
+
+service PcAgent {
+    rpc Login(LoginRequest) returns(LoginResponse) {}
+}
