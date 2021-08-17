@@ -13,5 +13,5 @@ service PcAgent {
     rpc RestartContainer(RestartContainerRequest) returns(CommonResponse) {}
     rpc StopContainer(StopContainerRequest) returns(CommonResponse) {}
     rpc DeleteContainer(DeleteContainerRequest) returns(CommonResponse) {}
-    rpc GetStatus(GetStatusRequest)returns(stream GetStatsResponse){};
+    rpc GetStatus(stream GetStatusRequest)returns(stream GetStatsResponse){};
 }
