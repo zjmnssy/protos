@@ -18,6 +18,11 @@ function goModInit(){
     else
         echo "[INFO] project not need init"
     fi
+
+    go get -v -u github.com/golang/protobuf/proto
+    go get -v -u google.golang.org/protobuf
+    go get -v -u google.golang.org/grpc
+    
 }
 
 function compileMain()
@@ -37,6 +42,8 @@ function compileMain()
             fi
         fi
     done
+
+    go mod tidy
 }
 
 echo "**********************************************************************************************"

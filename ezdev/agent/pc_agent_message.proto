@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package agent;
+
+option go_package = "github.com/zjmnssy/protos/agent";
+
+import "common/error_code.proto";
+
+message CommonResponse {  
+    common.ErrorCode ID                  = 1;  
+    string Msg                           = 2;
+}
+
+message GetContainerListRequest {  
+    
+}
+
+message ContainerInfo {
+    string ID          = 1;
+	string Image       = 2;
+	string Command     = 3;
+	string CreatedAt   = 4;
+	string RunningFor  = 5;
+	string Ports       = 6;
+	string State       = 7;
+	string Status      = 8;
+	string Size        = 9;
+	string Names       = 10;
+	string Labels      = 11;
+	string Mounts      = 12;
+	string Networks    = 13;
+}
+
+message GetContainerListResponse {  
+    common.ErrorCode ID                  = 1;  
+    string Msg                           = 2;
+    repeated ContainerInfo ContainerList = 3;
+}
+
+message CreateContainerArgs {
+    string Key = 1;
+    repeated string Value = 2;
+}
+
+message CreateContainerRequest {
+    string BaseImage                  = 1;
+    string Name                       = 2;
+    repeated CreateContainerArgs Args = 3;
+}
+
+message StartContainerRequest {
+    string Id = 1;
+}
+
+message RestartContainerRequest {
+    string Id = 1;
+}
+
+message StopContainerRequest {
+    string Id = 1;
+}
+
+message DeleteContainerRequest {
+    string Id = 1;
+}
+
+enum DataType 
+{
+    NoUse          = 0; 
+    PcStats        = 1;
+    ContainerStats = 2;
+    ControlInfo    = 3;
+}
+
+message ControlPolicy {
+    int64  ReportPeriod    = 1;
+}
+
+message GetStatusRequest {
+    DataType InfoType         = 1;
+    bytes Infos               = 2;
+}
+
+message ContainerState {
+    int64  timestamp    = 1;
+    string Id           = 2;
+	string Name         = 3;
+	double CpuPerc      = 4;
+	double MemPerc      = 5;
+	double MemUsage     = 6;
+	string MemUsageUnit = 7;
+	double MemLimit     = 8;
+	string MemLimitUnit = 9;
+}
+
+message GetStatsResponse {  
+    common.ErrorCode ID       = 1;  
+    string Msg                = 2;
+    DataType InfoType         = 3;
+    bytes Infos               = 4;
+}
+
+

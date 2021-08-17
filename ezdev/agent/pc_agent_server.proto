@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package agent;
+
+option go_package = "github.com/zjmnssy/protos/agent";
+
+import "ezdev/agent/pc_agent_message.proto";
+
+service PcAgent {
+    rpc GetContainerList(GetContainerListRequest) returns(GetContainerListResponse) {}
+    rpc CreateContainer(CreateContainerRequest) returns(CommonResponse) {}
+    rpc StartContainer(StartContainerRequest) returns(CommonResponse) {}
+    rpc RestartContainer(RestartContainerRequest) returns(CommonResponse) {}
+    rpc StopContainer(StopContainerRequest) returns(CommonResponse) {}
+    rpc DeleteContainer(DeleteContainerRequest) returns(CommonResponse) {}
+    rpc GetStatus(GetStatusRequest)returns(stream GetStatsResponse){};
+}
