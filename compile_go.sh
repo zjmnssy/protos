@@ -19,9 +19,9 @@ function goModInit(){
         echo "[INFO] project not need init"
     fi
 
-    go get -v -u github.com/golang/protobuf/proto
-    go get -v -u google.golang.org/protobuf
-    go get -v -u google.golang.org/grpc
+    go get -v -u github.com/golang/protobuf/proto@v1.5.2
+    go get -v -u google.golang.org/protobuf@v1.40.0
+    go get -v -u google.golang.org/grpc@v1.27.1
     
 }
 

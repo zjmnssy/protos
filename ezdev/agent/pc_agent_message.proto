@@ -7,7 +7,7 @@ option go_package = "github.com/zjmnssy/protos/agent";
 import "common/error_code.proto";
 
 message CommonResponse {  
-    common.ErrorCode ID                  = 1;  
+    common.ErrorCode Code                = 1;  
     string Msg                           = 2;
 }
 
@@ -32,7 +32,7 @@ message ContainerInfo {
 }
 
 message GetContainerListResponse {  
-    common.ErrorCode ID                  = 1;  
+    common.ErrorCode Code                = 1;  
     string Msg                           = 2;
     repeated ContainerInfo ContainerList = 3;
 }
@@ -94,7 +94,7 @@ message ContainerState {
 }
 
 message GetStatsResponse {  
-    common.ErrorCode ID       = 1;  
+    common.ErrorCode Code     = 1;  
     string Msg                = 2;
     DataType InfoType         = 3;
     bytes Infos               = 4;
