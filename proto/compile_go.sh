@@ -38,17 +38,15 @@ function compileMain()
                 stripPrefix=${fileFull/#$scriptFilePath/$replacement}
                 echo "now compile $stripPrefix"
 
-                protoc  --go_out=plugins=grpc,paths=source_relative:. $stripPrefix
+                protoc  --go_out=../ --go_opt=paths=import --go-grpc_out=../ --go-grpc_opt=paths=import $stripPrefix || ! echo "[ERROR] compile proto file of $stripPrefix failed, please check" || exit
             fi
         fi
     done
-
-    go mod tidy
 }
 
 echo "**********************************************************************************************"
 echo "                                    1. go module init"
-goModInit
+#goModInit
 echo "       -------------------------------------------------------------------------------        "
 echo "                                    2. compile proto files"
 compileMain $PROJECT_PATH

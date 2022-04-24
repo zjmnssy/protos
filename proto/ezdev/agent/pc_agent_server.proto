@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package agent;
 
-option go_package = "github.com/zjmnssy/protos/agent";
+option go_package = "go_proto_pkg/ezdev/agent";
 
 import "ezdev/agent/pc_agent_message.proto";
 
