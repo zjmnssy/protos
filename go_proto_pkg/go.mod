@@ -1,4 +1,4 @@
-module go_proto_pkg
+module github.com/zjmnssy/protos/go_proto_pkg
 
 go 1.15
 
